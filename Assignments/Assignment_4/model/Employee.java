@@ -5,12 +5,8 @@ public class Employee {
     private String name;
     private int employeeId;
     private double basicSalary;
-
-    public Employee(String name, int employeeId, double basicSalary) {
-        this.name = name;
-        this.employeeId = employeeId;
-        this.basicSalary = basicSalary;
-    }
+    private static Employee empArr[] = new Employee[1000];
+    private static int empCount = 0;
 
     public double calculateSalary() {
         return this.basicSalary;
@@ -26,5 +22,23 @@ public class Employee {
 
     public double getBasicSalary() {
         return this.basicSalary;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBasicSalary(double basicSalary) {
+        this.basicSalary = basicSalary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Employee(String name, double basicSalary) {
+        this.name = name;
+        this.basicSalary = basicSalary;
+        empCount++;
     }
 }
